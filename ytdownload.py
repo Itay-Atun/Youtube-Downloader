@@ -8,10 +8,11 @@ import os
 ssl._create_default_https_context = ssl._create_stdlib_context
 musicFile = open("./music.txt", "r")
 
-for line in musicFile:
-  videoURL = YouTube(line)
-  print(f"downloading {videoURL.title}")
-  streamVid = videoURL.streams.filter(file_extension="mp4").first().download("./playlist")
+function downloadFromYoutube():
+  for line in musicFile:
+    videoURL = YouTube(line)
+    print(f"downloading {videoURL.title}")
+    streamVid = videoURL.streams.filter(file_extension="mp4").first().download("./playlist")
 
 
 mylist = os.listdir("/Users/itayat/Learning/GitHub-Projects/Youtube-Downloader/playlist")
