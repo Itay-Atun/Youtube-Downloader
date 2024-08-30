@@ -2,11 +2,22 @@
 
 from  pytube import YouTube
 import ssl
+from moviepy.editor import *
+import os
 
 ssl._create_default_https_context = ssl._create_stdlib_context
-musicFile = open("/Users/itayat/Learning/Programing/Python/YoutubeDownload/music.txt", "r")
+musicFile = open("./music.txt", "r")
 
 for line in musicFile:
   videoURL = YouTube(line)
   print(f"downloading {videoURL.title}")
-  streamVid = videoURL.streams.filter(only_audio=True).first().download("/Users/itayat/Learning/Programing/Python/YoutubeDownload/playlist")
+  streamVid = videoURL.streams.filter(file_extension="mp4").first().download("./playlist")
+
+
+mylist = os.listdir("/Users/itayat/Learning/GitHub-Projects/Youtube-Downloader/playlist")
+for fileName in mylist:
+    print(f"Downloading {fileName}")
+    video = VideoFileClip(fileName)
+    baseName = fileName.rsplit(".mp4")
+    # print(baseName[0])
+    video.audio.write_audiofile(f".././converted/{baseName[0]}.mp3")
