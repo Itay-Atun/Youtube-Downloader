@@ -2,7 +2,7 @@
 Application to download Youtube videos
 
 Required 2 folders:
-  <br>
+  <p>
     1. playlist
     2. converted
-  </br>
+  </p>
