@@ -16,7 +16,7 @@ This repository contains a python program for downloading Youtube videos using i
 2. Save the videos your want to download in the `music.txt` file.
 3. Install all required packages:
     ```bash
-     pip install -r requirements.txt
+    pip install -r requirements.txt
     ```
 
 5. Execute the program:
