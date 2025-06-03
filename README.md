@@ -24,9 +24,7 @@ This repository contains a python program for downloading Youtube videos using i
    python3 ytdownload.py
    ```
 
-## Execution Example:
-
-#### File Structure:
+### File Structure:
 - `ytdownload.txt` => The main program code.
 - `music.txt` => File containing the URLs of the required YouTube videos to download.
 - `requirements.txt` => Containts all of the packages needed for this program.
